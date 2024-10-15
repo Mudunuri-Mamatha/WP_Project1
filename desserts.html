@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desserts - The Great Indian Cuisine</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and page structure */
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            color: #333; /* Darker color for content */
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Background video */
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        /* Header section */
+        .header {
+            text-align: center;
+            padding: 100px 20px;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            color: #333; /* Darker color for the main heading */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #ffcc99; /* Changed tagline color for better contrast */
+            margin-top: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Grid for dessert cards */
+        .dessert-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 50px 20px;
+            animation: zoomInCards 2s ease-in-out;
+        }
+
+        .dessert-card {
+            background-color: rgba(255, 255, 255, 0.8);
+            width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            transform: scale(0.8); /* Initial small size */
+            animation: zoomIn 0.8s ease-in-out forwards;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Remove underline from links */
+        .dessert-card a {
+            text-decoration: none;
+        }
+
+        .dessert-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .dessert-card h2 {
+            font-size: 1.8rem;
+            color: #b03a2e;
+            padding: 20px;
+            text-align: center;
+            background-color: rgba(255, 204, 153, 0.9);
+        }
+
+        .dessert-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .dessert-card:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Instruction for selecting a dessert */
+        .instruction {
+            font-size: 1.5rem;
+            color: #333;
+            margin-top: 30px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInText 1.5s ease-in-out forwards 1.5s; /* Animation with delay */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Keyframe animations */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes zoomIn {
+            0% { transform: scale(0.8); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes zoomInCards {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes fadeInText {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background video -->
+    <video autoplay muted loop class="background-video">
+        <source src="background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Header content -->
+    <header class="header">
+        <h1>Desserts</h1>
+        <p>Select your favorite dessert from the options below:</p>
+    </header>
+
+    <!-- Dessert grid -->
+    <section class="dessert-grid">
+        <div class="dessert-card">
+            <a href="gulabjamun.html">
+                <img src="gulabjamun.jpg" alt="Gulab Jamun">
+                <h2>Gulab Jamun</h2>
+            </a>
+        </div>
+        <div class="dessert-card">
+            <a href="kulfi.html">
+                <img src="kulfi.jpg" alt="Kulfi">
+                <h2>Kulfi</h2>
+            </a>
+        </div>
+    </section>
+
+    <!-- Instruction message centered below the options -->
+    <p class="instruction">Please choose a dessert to view the recipe.</p>
+
+</body>
+</html>
